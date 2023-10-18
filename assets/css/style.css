@@ -80,3 +80,54 @@ body{
 
     border: 1px solid black;
 }
+
+.botao_novo_cadastro{
+    padding: 5px 10px 5px 10px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+
+/* pagina cadastro */
+.section_cadastro{
+    display: flex;
+    justify-content: center;
+    
+    width: 100%;
+    margin: 150px 0 0 0 ;
+}
+
+
+.div_cadastro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 50%;
+}
+
+.div_cadastro form{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+
+.checkbox_termos{
+    width: 200px;
+    
+}
+
+
+.div_termos #concorda_termos{
+    vertical-align: top;
+    margin: 6px 0 0 0;
+}
+
+.div_botoes_form{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    margin: 15px 0 0 0;
+}
