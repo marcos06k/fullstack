@@ -1,0 +1,82 @@
+body{
+    margin: 0;
+}
+
+.section_login{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    
+    margin: 150px 0 0 0;
+    
+}
+
+.div_login{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    width: 50%;
+    
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+/* parte da esquerda */
+.div_login_esquerda{     
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin: 10% 0 10% 0;
+}
+
+.formulario_login{
+    display: flex;
+    flex-direction: column;
+}
+
+.espacamento_form{
+    margin: 5px 0 5px 0;
+
+}
+
+
+.input_form{
+    width: 230px;
+}
+
+.botao_form{
+    width: 80px;
+}
+
+.div_botao_form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* parte da direita */
+
+.div_login_direita{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+    margin: 10% 0 10% 0;
+}
+
+.div_conteudo_boasvinda{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 250px;
+    margin: 0 0 15px 0;
+
+    border: 1px solid black;
+}
