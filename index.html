@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Novo Cadastro</title>
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- bootstrap -->
@@ -38,31 +39,38 @@
         </div>
     </nav>
 
-    <!-- login -->
+    <section class="section_tela_inicial">
+        <div class="img_nome_usuario">
+            <img src="assets/img/Logo.png" alt="" width="200px">
+            <h1>Nome do Usuário</h1>
+            <p>informações do usuario</p>
+        </div>
+        <div class="abas">
+            <div class="grid-container">
+                <button class="grid-item">Temas de Estudo</button>
+                <button class="grid-item">Bate Papo</button>
+                <button class="grid-item">Materiais</button>
+                <button class="grid-item">Usuários</button>
 
-    <section class="section_login">
-        <div class="div_login">
-            <div class="div_login_esquerda">
-                <form class="formulario_login" action="">
-                    <label class="espacamento_form" for="email_input">Email:</label>
-                    <input class="input_form" id="email_input" type="text">
-                    <label class="espacamento_form" for="senha_input">Senha:</label>
-                    <input class="input_form" id="senha_input" type="text">
-                    <div class="div_botao_form">
-                        <input class="espacamento_form botao_form botao" type="submit" value="entrar" placeholder="Entrar">
-                    </div>
-                </form>
-                <a href="#">Recuperar conta</a>
-            </div>
-
-            <div class="div_login_direita">
-                <div class="div_conteudo_boasvinda"> Seja Bem-Vindo
-                    <img src="assets/img/Logo.png" alt="" style="width: 130px;">
-                </div>
-                <a href="cadastro.html" class="botao_novo_cadastro">Novo cadastro</a>
             </div>
         </div>
+
+        <div class="usuarios">
+            <h3>Usuários</h3>
+            <div class="img_usuarios">
+                    <img src="assets/img/pessoa.png" alt="" height="100px">
+                    <img src="assets/img/pessoa.png" alt="" height="100px">
+                    <img src="assets/img/pessoa.png" alt="" height="100px">
+            </div>
+        </div>
+
+        <div class="opcoes">
+            <button class="opcao_botao">Editar Perfil</button>
+            <button class="opcao_botao">Gerenciar meus conteudos</button>
+            <button class="opcao_botao">Sair</button>
+        </div>
     </section>
+
 
 </body>
 

@@ -47,10 +47,6 @@ body{
     width: 230px;
 }
 
-.botao_form{
-    width: 80px;
-}
-
 .div_botao_form{
     width: 100%;
     display: flex;
@@ -101,6 +97,7 @@ body{
 
 .div_cadastro{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -111,6 +108,20 @@ body{
     display: flex;
     flex-direction: column;
     width: 350px;
+}
+
+.botao_login_flex{
+    margin: 20px 0 0 0;
+    width: 350px;
+    display: flex;
+    justify-content: start;
+}
+
+.botao{
+    padding: 5px 10px 5px 10px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
 }
 
 .checkbox_termos{
@@ -131,3 +142,72 @@ body{
 
     margin: 15px 0 0 0;
 }
+
+
+.section_tela_inicial{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    margin: 85px 0 0 0;
+}
+
+
+.img_nome_usuario{
+    width: 60%;
+    text-align: center;
+}
+
+.abas{
+    width: 60%;
+    margin: 80px 0 0 0 ;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Cria 3 colunas de largura igual */
+    gap: 5px; /* Espaço entre os itens da grade */
+  }
+  
+  .grid-item {
+    border: none;
+    padding: 10px;
+    background-color: #ddd;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .usuarios{
+      display: flex;
+      flex-direction: column;
+      margin: 50px 0 0 0;
+  }
+
+  .usuarios h3{
+      text-align: center;
+  }
+
+  .img_usuarios{
+    display: flex;
+  }
+
+  .img_usuarios img{
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 5px;
+      margin: 0 5px 0 5px;
+  }
+  .opcoes{
+    display: flex;
+  }
+
+  .opcao_botao{
+    border: none;
+    padding:  0 10px 0 10px;
+    border-radius: 5px;
+    background-color: #ddd;
+    text-align: center;
+    font-size: 24px;
+    margin: 150px 5px 0 5px ;
+  } 
