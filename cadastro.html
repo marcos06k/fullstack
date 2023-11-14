@@ -40,30 +40,30 @@
 
 <section class="section_cadastro"> 
     <div class="div_cadastro">
-        <form action="">
+        <form method="post" action="cadastro.php">
             <label for="nome">Nome:</label>
-            <input id="nome" type="text">
+            <input id="nome" type="text" name="nome" required >
 
             <label for="sobrenome">Sobrenome:</label>
-            <input id="sobrenome" type="text">
+            <input id="sobrenome" type="text" name="sobrenome" required>
 
             <label for="email">Email:</label>
-            <input id="email" type="text">
+            <input id="email" type="text" name="email" required>
 
             <label for="telefone">Telefone:</label>
-            <input id="telefone" type="text">
+            <input id="telefone" type="text" name="telefone" required>
 
             <label for="curso">Curso</label>
-            <input id="curso" type="text">
+            <input id="curso" type="text" name="curso" required>
 
             <label for="senha">Senha</label>
-            <input id="senha" type="text">
+            <input id="senha" type="text" name="senha" required>
 
             <label for="confirmar_senha">Confirmar Senha</label>
-            <input id="confirmar_senha" type="text">
+            <input id="confirmar_senha" type="text" required>
 
             <div class="div_termos">
-                <input id="concorda_termos" type="checkbox">
+                <input id="concorda_termos" type="checkbox" required>
                 <label class="checkbox_termos" for="concorda_termos"> Concordo com os termos de uso e política de privacidade</label>
             </div>
 

@@ -43,11 +43,14 @@
     <section class="section_login">
         <div class="div_login">
             <div class="div_login_esquerda">
-                <form class="formulario_login" action="">
+                <form class="formulario_login" method="post" action="verificarLogin.php">
+
                     <label class="espacamento_form" for="email_input">Email:</label>
-                    <input class="input_form" id="email_input" type="text">
+                    <input class="input_form" id="email_input" type="email" name="email_input">
+
                     <label class="espacamento_form" for="senha_input">Senha:</label>
-                    <input class="input_form" id="senha_input" type="text">
+                    <input class="input_form" id="senha_input" type="text" name="senha_input">
+
                     <div class="div_botao_form">
                         <input class="espacamento_form botao_form botao" type="submit" value="entrar" placeholder="Entrar">
                     </div>
