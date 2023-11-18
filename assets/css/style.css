@@ -200,9 +200,9 @@ body{
   }
   .opcoes{
     display: flex;
-  }
+}
 
-  .opcao_botao{
+.opcao_botao{
     border: none;
     padding:  0 10px 0 10px;
     border-radius: 5px;
@@ -210,4 +210,17 @@ body{
     text-align: center;
     font-size: 24px;
     margin: 150px 5px 0 5px ;
-  } 
+    text-decoration: none;
+} 
+
+.opcoes a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/* editar perfil */
+
+.section_editar_perfil{
+
+}
