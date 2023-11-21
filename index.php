@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -41,9 +43,10 @@
 
     <section class="section_tela_inicial">
         <div class="img_nome_usuario">
-            <img src="assets/img/pessoa.png" alt="" width="200px">
-            <h1>Nome do Usuário</h1>
-            <p>informações do usuario</p>
+                <?php
+                include ("imagemBlob.php");
+                echo "<img src='$imagem_blob' alt='Imagem do Blob'>";
+                ?>
         </div>
         <div class="abas">
             <div class="grid-container">
@@ -58,9 +61,9 @@
         <div class="usuarios">
             <h3>Usuários</h3>
             <div class="img_usuarios">
-                    <img src="assets/img/pessoa.png" alt="" height="100px">
-                    <img src="assets/img/pessoa.png" alt="" height="100px">
-                    <img src="assets/img/pessoa.png" alt="" height="100px">
+                <img src="assets/img/pessoa.png" alt="" height="100px">
+                <img src="assets/img/pessoa.png" alt="" height="100px">
+                <img src="assets/img/pessoa.png" alt="" height="100px">
             </div>
         </div>
 
@@ -69,7 +72,7 @@
             <a class="opcao_botao" href="">Gerenciar meus conteudos</a>
             <a class="opcao_botao" href="">Sair</a>
         </div>
-     </section>
+    </section>
 
 
 </body>
