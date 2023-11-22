@@ -14,7 +14,7 @@
         if (isset($_FILES["imagem"])) {
             $caminhoArquivo = $_FILES["imagem"]["name"];
             echo "Caminho da imagem recebido: " . $caminhoArquivo;
-            $email = mysqli_query($banco, "update cadastro set nome='$nome', sobrenome='$sobrenome', email='$email', telefone='$telefone', curso='$curso', img_perfil='$caminhoArquivo' where email='$email'");
+            $email = mysqli_query($banco, "update cadastro set nome='$nome', sobrenome='$sobrenome', email='$email', telefone='$telefone', curso='$curso', img_perfil='assets/img/pessoa.png' where email='$email'");
             
         } else {
             echo "Erro: Nenhuma imagem foi enviada.";

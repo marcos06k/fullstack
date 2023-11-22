@@ -9,8 +9,7 @@
     if ($result) {
         $imagem_blob = $result[0];
     
-        // Definir o cabeçalho para indicar que é uma imagem
-        header('Content-Type: image/png'); // Ajuste conforme o tipo de imagem
+       
     
         // Exibir a imagem diretamente
         echo $imagem_blob;

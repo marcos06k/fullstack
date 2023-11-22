@@ -1,4 +1,24 @@
-
+<?php
+    include("conexao.php");
+    
+    // Inicie a sessão para acessar a variável de sessão verificar login
+    session_start();
+    //recebendo email
+    $dados = $_SESSION['meusDados'];
+  
+    $sql = mysqli_query($banco, "select img_perfil from cadastro where email='$dados';");
+    $result = mysqli_fetch_row($sql);
+    
+    if ($result) {
+        $imagem_blob = $result[0];
+    } else {
+         http_response_code(404);
+        echo "Imagem não encontrada";
+    }
+    
+    // Fechar a conexão
+    mysqli_close($banco);
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -43,9 +63,10 @@
 
     <section class="section_tela_inicial">
         <div class="img_nome_usuario">
+            
                 <?php
-                include ("imagemBlob.php");
-                echo "<img src='$imagem_blob' alt='Imagem do Blob'>";
+                   echo "<img src='$imagem_blob' alt=''>";
+                    echo "<h1>Dados : </h1>".$dados;
                 ?>
         </div>
         <div class="abas">
