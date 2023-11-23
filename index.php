@@ -1,23 +1,34 @@
 <?php
     include("conexao.php");
     
+    // Ver o login da pessoa
     // Inicie a sessão para acessar a variável de sessão verificar login
     session_start();
     //recebendo email
     $dados = $_SESSION['meusDados'];
   
-    $sql = mysqli_query($banco, "select img_perfil from cadastro where email='$dados';");
-    $result = mysqli_fetch_row($sql);
-    
+    $imgUsuarioLogin = mysqli_query($banco, "select img_perfil from cadastro where email='$dados';");
+    $result = mysqli_fetch_row($imgUsuarioLogin);
     if ($result) {
         $imagem_blob = $result[0];
     } else {
          http_response_code(404);
         echo "Imagem não encontrada";
     }
-    
+    //*
+
+    //fotos dos usuarios
+
+    $imgUsuarios = mysqli_query($banco, "select img_perfil from cadastro");
+    $result = mysqli_fetch_row($imgUsuarioLogin);
+
+
+
+
+
     // Fechar a conexão
     mysqli_close($banco);
+
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +76,7 @@
         <div class="img_nome_usuario">
             
                 <?php
-                   echo "<img src='$imagem_blob' alt=''>";
+                   echo "<img src='$imagem_blob' alt='' width='140px'>";
                     echo "<h1>Dados : </h1>".$dados;
                 ?>
         </div>
