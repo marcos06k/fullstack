@@ -7,24 +7,18 @@
     //recebendo email
     $dados = $_SESSION['meusDados'];
   
-    $imgUsuarioLogin = mysqli_query($banco, "select img_perfil from cadastro where email='$dados';");
-    $result = mysqli_fetch_row($imgUsuarioLogin);
-    if ($result) {
-        $imagem_blob = $result[0];
+    $imgUsuarioLogin = mysqli_query($banco, "select nome, img_perfil from cadastro where email='$dados';");
+    $resultImgLogin = mysqli_fetch_row($imgUsuarioLogin);
+    if ($resultImgLogin) {
+        $imagem_blob = $resultImgLogin[1];
     } else {
-         http_response_code(404);
         echo "Imagem não encontrada";
     }
     //*
 
     //fotos dos usuarios
-
-    $imgUsuarios = mysqli_query($banco, "select img_perfil from cadastro");
-    $result = mysqli_fetch_row($imgUsuarioLogin);
-
-
-
-
+    $imgBdLoginUsuarios = mysqli_query($banco, "select email, img_perfil from cadastro");
+    $resultImgLoginsBd = mysqli_num_rows($imgBdLoginUsuarios);
 
     // Fechar a conexão
     mysqli_close($banco);
@@ -93,9 +87,17 @@
         <div class="usuarios">
             <h3>Usuários</h3>
             <div class="img_usuarios">
-                <img src="assets/img/pessoa.png" alt="" height="100px">
-                <img src="assets/img/pessoa.png" alt="" height="100px">
-                <img src="assets/img/pessoa.png" alt="" height="100px">
+                <?php
+                for ($i=0; $i < $resultImgLoginsBd; $i++) { 
+                    $imgLoginUsuarios = mysqli_fetch_row($imgBdLoginUsuarios);
+                    if($dados!=$imgLoginUsuarios[0]){
+                        echo "<img src='$imgLoginUsuarios[1]' alt='' width='140px'>";
+                    }
+                
+                }
+                
+                
+                ?>
             </div>
         </div>
 
