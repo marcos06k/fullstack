@@ -1,83 +1,73 @@
-body{
+body {
     margin: 0;
 }
 
-.section_login{
+.section_login {
     width: 100%;
-
     display: flex;
     justify-content: center;
-    
     margin: 150px 0 0 0;
-    
 }
 
-.div_login{
+.div_login {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-
     width: 50%;
-    
     border: 1px solid black;
     border-radius: 25px;
 }
 
+
 /* parte da esquerda */
-.div_login_esquerda{     
+
+.div_login_esquerda {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
     margin: 10% 0 10% 0;
 }
 
-.formulario_login{
+.formulario_login {
     display: flex;
     flex-direction: column;
 }
 
-.espacamento_form{
+.espacamento_form {
     margin: 5px 0 5px 0;
-
 }
 
-
-.input_form{
+.input_form {
     width: 230px;
 }
 
-.div_botao_form{
+.div_botao_form {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
+
 /* parte da direita */
 
-.div_login_direita{
-    
+.div_login_direita {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    
     margin: 10% 0 10% 0;
 }
 
-.div_conteudo_boasvinda{
+.div_conteudo_boasvinda {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     width: 250px;
     margin: 0 0 15px 0;
-
     border: 1px solid black;
 }
 
-.botao_novo_cadastro{
+.botao_novo_cadastro {
     padding: 5px 10px 5px 10px;
     background-color: black;
     color: white;
@@ -86,119 +76,131 @@ body{
 
 
 /* pagina cadastro */
-.section_cadastro{
+
+.section_cadastro {
     display: flex;
     justify-content: center;
-    
     width: 100%;
-    margin: 150px 0 0 0 ;
+    margin: 150px 0 0 0;
 }
 
-
-.div_cadastro{
+.div_cadastro {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     width: 50%;
 }
 
-.div_cadastro form{
+.div_cadastro form {
     display: flex;
     flex-direction: column;
     width: 350px;
 }
 
-.botao_login_flex{
+.botao_login_flex {
     margin: 20px 0 0 0;
     width: 350px;
     display: flex;
     justify-content: start;
 }
 
-.botao{
+.botao {
     padding: 5px 10px 5px 10px;
     background-color: black;
     color: white;
     text-decoration: none;
 }
 
-.checkbox_termos{
+.checkbox_termos {
     width: 200px;
-    
 }
 
-
-.div_termos #concorda_termos{
+.div_termos #concorda_termos {
     vertical-align: top;
     margin: 6px 0 0 0;
 }
 
-.div_botoes_form{
+.div_botoes_form {
     width: 100%;
     display: flex;
     justify-content: space-around;
-
     margin: 15px 0 0 0;
 }
 
-
-.section_tela_inicial{
+.section_tela_inicial {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     width: 100%;
     margin: 85px 0 0 0;
 }
 
-
-.img_nome_usuario{
+.img_nome_usuario {
     width: 60%;
     text-align: center;
 }
 
-.abas{
+.abas {
     width: 60%;
-    margin: 80px 0 0 0 ;
+    margin: 80px 0 0 0;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Cria 3 colunas de largura igual */
-    gap: 5px; /* Espaço entre os itens da grade */
-  }
-  
-  .grid-item {
+    grid-template-columns: repeat(4, 1fr);
+    /* Cria 3 colunas de largura igual */
+    gap: 5px;
+    /* Espaço entre os itens da grade */
+}
+
+.grid-container_2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Cria 3 colunas de largura igual */
+    gap: 5px;
+    /* Espaço entre os itens da grade */
+}
+
+
+/* .grid-container a{
+    text-decoration: none;
+    color: black;
+} */
+
+.grid-item {
     border: none;
-    padding: 10px;
+    padding: 20px;
     background-color: #ddd;
     text-align: center;
     font-size: 24px;
-  }
+    text-decoration: none;
+    color: black;
+}
 
-  .usuarios{
-      display: flex;
-      flex-direction: column;
-      margin: 50px 0 0 0;
-  }
-
-  .usuarios h3{
-      text-align: center;
-  }
-
-  .img_usuarios{
+.usuarios {
     display: flex;
-  }
+    flex-direction: column;
+    margin: 50px 0 0 0;
+}
 
-  .img_usuarios img{
-      border: 1px solid black;
-      border-radius: 5px;
-      padding: 5px;
-      margin: 0 5px 0 5px;
-  }
-  .opcoes{
+.usuarios h3 {
+    text-align: center;
+}
+
+.img_usuarios {
+    display: flex;
+}
+
+.img_usuarios img {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 5px 0 5px;
+}
+
+
+/* .opcoes{
     display: flex;
 }
 
@@ -211,16 +213,12 @@ body{
     font-size: 24px;
     margin: 150px 5px 0 5px ;
     text-decoration: none;
-} 
+}  */
 
-.opcoes a{
+.opcoes a {
     text-decoration: none;
     color: black;
 }
 
 
 /* editar perfil */
-
-.section_editar_perfil{
-
-}

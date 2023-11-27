@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Materiais</title>
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
@@ -31,36 +30,10 @@
             </div>
         </div>
     </nav>
-
-    <!-- login -->
-
-    <section class="section_login">
-        <div class="div_login">
-            <div class="div_login_esquerda">
-                <form class="formulario_login" method="post" action="verificarLogin.php">
-
-                    <label class="espacamento_form" for="email_input">Email:</label>
-                    <input class="input_form" id="email_input" type="email" name="email_input">
-
-                    <label class="espacamento_form" for="senha_input">Senha:</label>
-                    <input class="input_form" id="senha_input" type="text" name="senha_input">
-
-                    <div class="div_botao_form">
-                        <input class="espacamento_form botao_form botao" type="submit" value="entrar" placeholder="Entrar">
-                    </div>
-                </form>
-                <a href="#">Recuperar conta</a>
-            </div>
-
-            <div class="div_login_direita">
-                <div class="div_conteudo_boasvinda"> Seja Bem-Vindo
-                    <img src="assets/img/Logo.png" alt="" style="width: 130px;">
-                </div>
-                <a href="cadastro.html" class="botao_novo_cadastro">Novo cadastro</a>
-            </div>
-        </div>
+    
+    <section class="conteudo">
+        
     </section>
 
 </body>
-
 </html>
