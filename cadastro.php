@@ -25,7 +25,7 @@
             // echo "Nâo foi possível cadastrar<br>Causa:".mysqli_error($banco) ;
             
         }
-        mysqli_close($banco)
+        mysqli_close($banco);
 
     ?>
 </body>

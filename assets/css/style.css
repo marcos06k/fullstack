@@ -222,3 +222,26 @@ body {
 
 
 /* editar perfil */
+
+.section_conteudo {
+    display: flex;
+    justify-content: center;
+    margin: 95px 0 0 0;
+}
+
+.grid-container_materias {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.grid-item_materias {
+    border: none;
+    padding: 20px;
+    background-color: #ddd;
+    text-align: center;
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+}
