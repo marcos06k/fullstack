@@ -1,3 +1,10 @@
+<?php
+include("conexao.php");
+
+$queryArquivo = mysqli_query($banco, "select conteudo, arquivo from materia;");
+$arquivoBd = mysqli_num_rows($queryArquivo);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,22 +41,25 @@
     </nav>
     <section class="section_conteudo">
         <div class="cadastrar_materias">
-            <form method="post" action="materiasCadastrar.php">
+            <form method="post" action="materiasCadastrar.php" enctype="multipart/form-data">
                 <label class="espacamento_form" for="materias_arquivo_form">Selecione o arquivo da sua materia:</label>
+                <input type="text" name="nomeArquivo" id="nomeArquivo_input">
                 <input type="file" name="arquivo" id="arquivo_input" accept="arquivo/*">
+                
                 <input class="espacamento_form botao_form botao" type="submit" value="Enviar Arquivo" placeholder="Enviar Arquivo">
             </form>
         </div>
+
     </section>
 
     <section class="section_conteudo">
-
         <div class="grid-container_materias">
-            <div class="grid-item_materias materias">
-
-
-            </div>
-
+            <?php
+            for ($i = 0; $i < $arquivoBd; $i++) {
+                $arquivoBanco = mysqli_fetch_row($queryArquivo);
+                echo "<div class='grid-item_materias materias'> <a href='$arquivoBanco[1]'>$arquivoBanco[0]</a> </div>";
+            }
+            ?>
 
         </div>
     </section>

@@ -3,13 +3,15 @@ include("conexao.php");
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verificar se o campo 'arquivo' foi enviado
-        if (isset($_FILES["arquivo"])) {
-            $caminhoArquivo = $_FILES["arquivo"];
+        if (isset($_FILES['arquivo'])) {
+            $nomeArquivo = $_POST['nomeArquivo'];
+
+            $caminhoArquivo = $_FILES['arquivo']['name'];
             echo "Caminho do arquivo recebido: " . $caminhoArquivo;
-            $sql = mysqli_query($banco, "insert into materia values ('null, '$caminhoArquivo')");
+            $sql = mysqli_query($banco, "insert into materia values (null,'$nomeArquivo', 'assets/img/imgUsuers/$caminhoArquivo')");
             if ($sql) { 
                 // echo "arquivo cadastrado com sucesso";
-                echo"<META http-equiv='refresh' content='0,URL=index.html'>";
+                echo"<META http-equiv='refresh' content='0,URL=materias.php'>";
             } else {
                 echo "Nâo foi possível cadastrar<br>Causa:".mysqli_error($banco) ;
             
