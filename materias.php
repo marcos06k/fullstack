@@ -22,10 +22,10 @@ $arquivoBd = mysqli_num_rows($queryArquivo);
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-info fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="assets/img/Logo.png" alt="Avatar Logo" style="width:70px;" class="rounded-pill">
+                <img src="assets/img/Logo.png" alt="Avatar Logo" style="width:50px;" class="rounded-pill">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -42,8 +42,9 @@ $arquivoBd = mysqli_num_rows($queryArquivo);
     <section class="section_conteudo">
         <div class="cadastrar_materias">
             <form method="post" action="materiasCadastrar.php" enctype="multipart/form-data">
-                <label class="espacamento_form" for="materias_arquivo_form">Selecione o arquivo da sua materia:</label>
+                <label class="espacamento_form" for="nomeArquivo_input">De o nome para o arquivo:</label>
                 <input type="text" name="nomeArquivo" id="nomeArquivo_input">
+                <label class="espacamento_form" for="arquivo_input">Selecione o arquivo</label>
                 <input type="file" name="arquivo" id="arquivo_input" accept="arquivo/*">
                 
                 <input class="espacamento_form botao_form botao" type="submit" value="Enviar Arquivo" placeholder="Enviar Arquivo">
