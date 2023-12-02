@@ -17,7 +17,7 @@
         $curso = $_POST["curso"];
         $senha = $_POST["senha"];
         //query do sql
-        $sql = mysqli_query($banco,"insert into cadastro values(null,'$nome','$sobrenome','$email','$telefone','$curso','$senha','');");
+        $sql = mysqli_query($banco,"insert into cadastro_professor values(null,'$nome','$sobrenome','$email','$telefone','$curso','$senha','');");
         if ($sql) { 
             // echo "Contato cadastrado com sucesso";
             echo"<META http-equiv='refresh' content='0,URL=index.html'>";

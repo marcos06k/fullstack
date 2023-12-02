@@ -7,8 +7,8 @@
     $senha_input = $_POST["senha_input"];
 
 
-    $email = mysqli_query($banco, "select email from cadastro where email='$email_input' and senha='$senha_input';");
-    $senha = mysqli_query($banco, "select senha from cadastro where email='$email_input' and senha='$senha_input';");
+    $email = mysqli_query($banco, "select email from cadastro_professor where email='$email_input' and senha='$senha_input';");
+    $senha = mysqli_query($banco, "select senha from cadastro_professor where email='$email_input' and senha='$senha_input';");
     $registro_email = mysqli_fetch_row($email);
     $registro_senha = mysqli_fetch_row($senha);
 

@@ -7,7 +7,7 @@ session_start();
 //recebendo email
 $dados = $_SESSION['meusDados'];
 
-$imgUsuarioLogin = mysqli_query($banco, "select nome, img_perfil from cadastro where email='$dados';");
+$imgUsuarioLogin = mysqli_query($banco, "select nome, img_perfil from cadastro_professor where email='$dados';");
 $resultImgLogin = mysqli_fetch_row($imgUsuarioLogin);
 if ($resultImgLogin) {
     $imagem_blob = $resultImgLogin[1];
@@ -17,7 +17,7 @@ if ($resultImgLogin) {
 //*
 
 //fotos dos usuarios
-$imgBdLoginUsuarios = mysqli_query($banco, "select email, img_perfil from cadastro");
+$imgBdLoginUsuarios = mysqli_query($banco, "select email, img_perfil from cadastro_professor");
 $resultImgLoginsBd = mysqli_num_rows($imgBdLoginUsuarios);
 
 // Fechar a conexão
@@ -97,7 +97,7 @@ mysqli_close($banco);
             <div class="abas">
                 <div class="grid-container_2">
                     <a class="grid-item" href="editarPerfil.html">Editar Perfil</a>
-                    <a class="grid-item" href="">Gerenciar meus conteudos</a>
+                    <a class="grid-item" href="gerenciarConteudos.php">Gerenciar meus conteudos</a>
                     <a class="grid-item" href="">Sair</a>
                 </div>
             </div>
