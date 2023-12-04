@@ -13,7 +13,7 @@
         // Verificar se o campo 'imagem' foi enviado
         if (isset($_FILES["imagem"])) {
             $caminhoArquivo = $_FILES["imagem"]["name"];
-            echo "Caminho da imagem recebido: " . $caminhoArquivo;
+            // echo "Caminho da imagem recebido: " . $caminhoArquivo;
             $email = mysqli_query($banco, "update cadastro_professor set nome='$nome', sobrenome='$sobrenome', email='$email', telefone='$telefone', curso='$curso', img_perfil='assets/img/imgUsuers/$caminhoArquivo' where email='$email'");
             
         } else {

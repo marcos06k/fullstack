@@ -1,16 +1,22 @@
 <?php
     include("conexao.php");
     
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    session_start();
+    $email_login = $_SESSION['meusDados'];
+    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Verificar se o campo 'arquivo' foi enviado
             if (isset($_FILES['arquivo'])) {
                 $nomeArquivo = $_POST['nomeArquivo'];
-                $email_login = $_SESSION['meusDados'];
-    
+                
+                $query_dadosUsuario_login = mysqli_query($banco, "select id_cadastro_professor from cadastro_professor where email='$email_login';");
+                $dadosUsuario_login = mysqli_fetch_row($query_dadosUsuario_login);
+
                 $caminhoArquivo = $_FILES['arquivo']['name'];
                 echo "Caminho do arquivo recebido: " . $caminhoArquivo;
                 
-                $sql = mysqli_query($banco, "insert into materia values (null,'$nomeArquivo', 'assets/img/imgUsuers/$caminhoArquivo', NOW(), 2)");
+                $sql = mysqli_query($banco, "insert into materia values (null,'$nomeArquivo', 'assets/img/imgUsuers/$caminhoArquivo', NOW(), '$dadosUsuario_login[0]')");
+
                 if ($sql) { 
                     // echo "arquivo cadastrado com sucesso";
                     echo"<META http-equiv='refresh' content='0,URL=materias.php'>";
@@ -25,6 +31,11 @@
         } else {
             echo "Erro: Método de requisição inválido.";
         }
+
+        
+
+        
+
 
         mysqli_close($banco);
     
@@ -45,36 +56,39 @@
 </head>
 <body>
      <!-- navbar -->
-     <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="assets/img/Logo.png" alt="Avatar Logo" style="width:70px;" class="rounded-pill">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+     <nav class="navbar navbar-expand-sm navbar-dark bg-info fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/Logo.png" alt="Avatar Logo" style="width:50px;" class="rounded-pill">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-                <div class="collapse navbar-collapse" id="mynavbar">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home</a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Home</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
         <section class="section_conteudo">
         <div class="cadastrar_materias">
             <form method="post" action="gerenciarConteudos.php" enctype="multipart/form-data">
-                <label class="espacamento_form" for="nomeArquivo_input">De o nome para o arquivo:</label>
+                <label class="espacamento_form" for="nomeArquivo_input">Nome do arquivo:</label>
                 <input type="text" name="nomeArquivo" id="nomeArquivo_input">
-                <label class="espacamento_form" for="arquivo_input">Selecione o arquivo</label>
                 <input type="file" name="arquivo" id="arquivo_input" accept="arquivo/*">
                 
                 <input class="espacamento_form botao_form botao" type="submit" value="Enviar Arquivo" placeholder="Enviar Arquivo">
             </form>
         </div>
 
+        
+
     </section>
+
+    
 </body>
 </html>
