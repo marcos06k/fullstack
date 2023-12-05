@@ -73,7 +73,7 @@ mysqli_close($banco);
                 <a class="grid-item" href="">Temas de Estudo</a>
                 <a class="grid-item" href="">Bate Papo</a>
                 <a class="grid-item" href="materias.php">Materiais</a>
-                <a class="grid-item" href="">Usuários</a>
+                <a class="grid-item" href="usuarios.php">Usuários</a>
 
             </div>
         </div>
