@@ -245,3 +245,23 @@ body {
     text-decoration: none;
     color: black;
 }
+
+/* pagina usuarios */
+.container_card_usuairios-usuarios{
+    display: flex;
+    justify-content: center;
+    margin: 95px 0 0 0;
+}
+.div_cards-usuarios{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card_usuarios-usuarios{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card_usuarios-usuarios img{
+    height: 280px;
+}

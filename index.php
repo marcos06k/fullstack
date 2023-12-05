@@ -25,24 +25,24 @@ mysqli_close($banco);
 
 ?>
 
-    <!DOCTYPE html>
-    <html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Página Principal</title>
-        <!-- CSS -->
-        <link rel="stylesheet" href="assets/css/style.css">
-        <!-- bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Página Principal</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
 
-    <body>
-        <!-- navbar -->
-        <nav class="navbar navbar-expand-sm navbar-dark bg-info fixed-top">
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-info fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="assets/img/Logo.png" alt="Avatar Logo" style="width:50px;" class="rounded-pill">
@@ -60,51 +60,51 @@ mysqli_close($banco);
         </div>
     </nav>
 
-        <section class="section_tela_inicial">
-            <div class="img_nome_usuario">
+    <section class="section_tela_inicial">
+        <div class="img_nome_usuario">
 
-                <?php
+            <?php
             echo "<img src='$imagem_blob' alt='' width='140px'>";
             // echo "<h1>Dados : </h1>" . $dados;
             ?>
-            </div>
-            <div class="abas">
-                <div class="grid-container">
-                    <a class="grid-item" href="">Temas de Estudo</a>
-                    <a class="grid-item" href="">Bate Papo</a>
-                    <a class="grid-item" href="materias.php">Materiais</a>
-                    <a class="grid-item" href="">Usuários</a>
+        </div>
+        <div class="abas">
+            <div class="grid-container">
+                <a class="grid-item" href="">Temas de Estudo</a>
+                <a class="grid-item" href="">Bate Papo</a>
+                <a class="grid-item" href="materias.php">Materiais</a>
+                <a class="grid-item" href="">Usuários</a>
 
-                </div>
             </div>
+        </div>
 
-            <div class="usuarios">
-                <h3>Usuários</h3>
-                <div class="img_usuarios">
-                    <?php
-                for ($i = 0; $i < $resultImgLoginsBd; $i++) {
-                    $imgLoginUsuarios = mysqli_fetch_row($imgBdLoginUsuarios);
-                    if ($dados != $imgLoginUsuarios[0]) {
-                        echo "<img src='$imgLoginUsuarios[1]' alt='' width='120px'>";
+        <div class="usuarios">
+            <h3>Usuários</h3>
+            <div class="img_usuarios">
+                <?php
+                    for ($i = 0; $i < $resultImgLoginsBd; $i++) {
+                        $imgLoginUsuarios = mysqli_fetch_row($imgBdLoginUsuarios);
+                        if ($dados != $imgLoginUsuarios[0]) {
+                            echo "<img src='$imgLoginUsuarios[1]' alt='' width='120px'>";
+                        }
                     }
-                }
 
 
                 ?>
-                </div>
             </div>
+        </div>
 
-            <div class="abas">
-                <div class="grid-container_2">
-                    <a class="grid-item" href="editarPerfil.html">Editar Perfil</a>
-                    <a class="grid-item" href="gerenciarConteudos.php">Gerenciar meus conteudos</a>
-                    <a class="grid-item" href="">Sair</a>
-                </div>
+        <div class="abas">
+            <div class="grid-container_2">
+                <a class="grid-item" href="editarPerfil.html">Editar Perfil</a>
+                <a class="grid-item" href="gerenciarConteudos.php">Gerenciar meus conteudos</a>
+                <a class="grid-item" href="">Sair</a>
             </div>
+        </div>
 
-        </section>
+    </section>
 
 
-    </body>
+</body>
 
-    </html>
+</html>

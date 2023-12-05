@@ -1,24 +1,29 @@
 <?php
     include("conexao.php");
     
+    //buscando por meio de uma seção o email do usuario logado
     session_start();
     $email_login = $_SESSION['meusDados'];
     
+    //verifica se a vinda do metodo for post 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
             // Verificar se o campo 'arquivo' foi enviado
             if (isset($_FILES['arquivo'])) {
+                //pegando o arquivo por metodo post do html
                 $nomeArquivo = $_POST['nomeArquivo'];
                 
+                //query para pegar o id do usuario no banco de dados conforme seu email
                 $query_dadosUsuario_login = mysqli_query($banco, "select id_cadastro_professor from cadastro_professor where email='$email_login';");
+                //pegando o dado que a query achou
                 $dadosUsuario_login = mysqli_fetch_row($query_dadosUsuario_login);
 
+                //pegando o caminho do arquivo
                 $caminhoArquivo = $_FILES['arquivo']['name'];
-                echo "Caminho do arquivo recebido: " . $caminhoArquivo;
-                
+                //inserindo a materia no banco de dados
                 $sql = mysqli_query($banco, "insert into materia values (null,'$nomeArquivo', 'assets/img/imgUsuers/$caminhoArquivo', NOW(), '$dadosUsuario_login[0]')");
 
                 if ($sql) { 
-                    // echo "arquivo cadastrado com sucesso";
                     echo"<META http-equiv='refresh' content='0,URL=materias.php'>";
                 } else {
                     echo "Nâo foi possível cadastrar<br>Causa:".mysqli_error($banco) ;
@@ -31,14 +36,18 @@
         } else {
             echo "Erro: Método de requisição inválido.";
         }
-
-        
-
-        
-
-
-        mysqli_close($banco);
     
+        //query para pegar o id do usuario no banco de dados conforme seu email
+        $query_dadosUsuarioProfessor_login = mysqli_query($banco, "select id_cadastro_professor from cadastro_professor where email='$email_login';");
+        //pegando o dado que a query achou
+        $dadosUsuarioProfessor_login = mysqli_fetch_row($query_dadosUsuarioProfessor_login);
+    
+        //query para pegar os dados da classe materia
+        $queryArquivoProfessor = mysqli_query($banco, "select titulo, arquivo from materia where id_cadastro_professor='$dadosUsuarioProfessor_login[0]';");
+        //pegando o numero total de linhas que a query conseguiu pegar
+        $arquivoProfessorBd = mysqli_num_rows($queryArquivoProfessor);
+
+    mysqli_close($banco);
 ?>
 
 <!DOCTYPE html>
@@ -84,11 +93,21 @@
                 <input class="espacamento_form botao_form botao" type="submit" value="Enviar Arquivo" placeholder="Enviar Arquivo">
             </form>
         </div>
-
-        
-
     </section>
 
+    <section class="section_conteudo">
+        <div class="grid-container_materias">
+            <?php
+            for ($i = 0; $i < $arquivoProfessorBd; $i++) {
+                //pega os dados contido em cada linha
+                $arquivoProfessorBanco = mysqli_fetch_row($queryArquivoProfessor);
+                //adiciona as materias na tela
+                echo "<div class='grid-item_materias materias'> <a href='$arquivoProfessorBanco[1]'>$arquivoProfessorBanco[0]</a> </div>";
+            }
+            ?>
+
+        </div>
+    </section>
     
 </body>
 </html>
