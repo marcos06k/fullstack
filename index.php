@@ -98,7 +98,7 @@ mysqli_close($banco);
             <div class="grid-container_2">
                 <a class="grid-item" href="editarPerfil.html">Editar Perfil</a>
                 <a class="grid-item" href="gerenciarConteudos.php">Gerenciar meus conteudos</a>
-                <a class="grid-item" href="">Sair</a>
+                <a class="grid-item" href="login.html">Sair</a>
             </div>
         </div>
 

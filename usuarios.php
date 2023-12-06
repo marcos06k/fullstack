@@ -51,25 +51,21 @@ mysqli_close($banco);
             </div>
         </div>
     </nav>
-    
-    <!-- <div class="container_card_usuairios-usuarios">
+
+    <div class="container_card_usuairios-usuarios">
         <div class="div_cards-usuarios">
-            <div class="card_usuarios-usuarios">
-                <img src="assets/img/imgUsuers/fotoMEssi.jfif" alt="" >
-                <p>nome</p>
-                <p>email</p>
-            </div>
-        </div>
-    </div> -->
-    
-    <?php
-                for ($i = 0; $i < $resultDadosLoginsBd; $i++) {
-                    $dadosLoginUsuarios = mysqli_fetch_row($query_dadosUsuarios);
-                    if ($dados != $dadosLoginUsuarios[2]) {
-                        echo "<div class='container_card_usuairios-usuarios'><div class='div_cards-usuarios'><div class='card_usuarios-usuarios'><img src='$dadosLoginUsuarios[3]' alt='' ><p>$dadosLoginUsuarios[0].$dadosLoginUsuarios[1]</p><p>$dadosLoginUsuarios[2]</p></div></div></div>";
-                    }
+            <?php
+            for ($i = 0; $i < $resultDadosLoginsBd; $i++) {
+                $dadosLoginUsuarios = mysqli_fetch_row($query_dadosUsuarios);
+                if ($dados != $dadosLoginUsuarios[2]) {
+                    echo "<div class='card_usuarios-usuarios'><img src='$dadosLoginUsuarios[3]' alt='' ><p>Professor: $dadosLoginUsuarios[0] $dadosLoginUsuarios[1]</p><p>$dadosLoginUsuarios[2]</p></div>";
                 }
-                ?>
+            }
+            ?>
+        </div>
+    </div>
+
+
 </body>
 
 </html>

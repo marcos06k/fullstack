@@ -246,22 +246,28 @@ body {
     color: black;
 }
 
+
 /* pagina usuarios */
-.container_card_usuairios-usuarios{
+
+.container_card_usuairios-usuarios {
     display: flex;
     justify-content: center;
     margin: 95px 0 0 0;
 }
-.div_cards-usuarios{
+
+.div_cards-usuarios {
     width: 60%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-.card_usuarios-usuarios{
+
+.card_usuarios-usuarios {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 0px 15px 0 15px;
 }
 
-.card_usuarios-usuarios img{
+.card_usuarios-usuarios img {
     height: 280px;
+    width: 100%;
 }
