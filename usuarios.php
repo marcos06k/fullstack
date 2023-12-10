@@ -34,10 +34,10 @@ mysqli_close($banco);
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-sm navbar-dark bg-info fixed-top">
+    <nav class="navbar navbar-expand-sm  navbar-dark  fixed-top" style="background-color: rgb(1, 127, 201);">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="assets/img/Logo.png" alt="Avatar Logo" style="width:50px;" class="rounded-pill">
+                <img src="assets/img/logoEscola.png" alt="Avatar Logo" style="width:50px;" class="rounded-pill">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>

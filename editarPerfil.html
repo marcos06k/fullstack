@@ -15,10 +15,10 @@
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-sm navbar-dark bg-info fixed-top">
+    <nav class="navbar navbar-expand-sm  navbar-dark  fixed-top" style="background-color: rgb(1, 127, 201);">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="assets/img/Logo.png" alt="Avatar Logo" style="width:50px;" class="rounded-pill">
+                <img src="assets/img/logoEscola.png" alt="Avatar Logo" style="width:50px;" class="rounded-pill">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -37,22 +37,22 @@
         <div class="div_cadastro">
             <form id="formulario" method="post" action="editarPerfil.php" enctype="multipart/form-data">
                 <label for="inputImagem">Foto Perfil:</label>
-                <input type="file" name="imagem" id="inputImagem" accept="image/*">
+                <input  type="file" name="imagem" id="inputImagem" accept="image/*">
 
                 <label for="nome">Nome:</label>
-                <input id="nome" type="text" name="nome">
+                <input class="input_form_cadastro" id="nome" type="text" name="nome">
 
                 <label for="sobrenome">Sobrenome:</label>
-                <input id="sobrenome" type="text" name="sobrenome">
+                <input class="input_form_cadastro" id="sobrenome" type="text" name="sobrenome">
 
                 <label for="email">Email:</label>
-                <input id="email" type="text" name="email">
+                <input class="input_form_cadastro" id="email" type="text" name="email">
 
                 <label for="telefone">Telefone:</label>
-                <input id="telefone" type="text" name="telefone">
+                <input class="input_form_cadastro" id="telefone" type="text" name="telefone">
 
                 <label for="curso">Curso</label>
-                <input id="curso" type="text" name="curso">
+                <input class="input_form_cadastro" id="curso" type="text" name="curso">
 
                 <div class="div_termos">
                     <input id="concorda_termos" type="checkbox" required>

@@ -14,10 +14,22 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     width: 50%;
-    border: 1px solid black;
     border-radius: 25px;
+    background-color: rgb(1, 127, 201);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.botao {
+    padding: 5px 10px 5px 10px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+.botao:hover {
+    background-color: rgb(34, 34, 34);
+}
 
 /* parte da esquerda */
 
@@ -38,13 +50,26 @@ body {
 }
 
 .input_form {
-    width: 230px;
+    width: 220px;
+    border-radius: 50px;
+    border: 1px solid black;
 }
 
 .div_botao_form {
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+.formulario_login .recuperar_login{
+    color: black; 
+    text-decoration: none;
+
+}
+.formulario_login .recuperar_login:hover{
+    color: black; 
+    text-decoration: underline;
+
 }
 
 
@@ -54,7 +79,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10% 0 10% 0;
+    margin: 8.5% 0 10% 0;
 }
 
 .div_conteudo_boasvinda {
@@ -62,17 +87,15 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 250px;
+    width: 220px;
     margin: 0 0 15px 0;
-    border: 1px solid black;
+    
+}
+.div_conteudo_boasvinda .botao{
+    margin: 0 0 7px 0;
 }
 
-.botao_novo_cadastro {
-    padding: 5px 10px 5px 10px;
-    background-color: black;
-    color: white;
-    text-decoration: none;
-}
+
 
 
 /* pagina cadastro */
@@ -89,13 +112,21 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 22%;
+    background-color: rgb(1, 127, 201);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 25px;
 }
 
 .div_cadastro form {
     display: flex;
     flex-direction: column;
-    width: 350px;
+    width: 80%;
+    margin: 5% 0 5% 0;
+}
+.input_form_cadastro{
+    border-radius: 50px;
+    border: 1px solid black;
 }
 
 .botao_login_flex {
@@ -105,12 +136,7 @@ body {
     justify-content: start;
 }
 
-.botao {
-    padding: 5px 10px 5px 10px;
-    background-color: black;
-    color: white;
-    text-decoration: none;
-}
+
 
 .checkbox_termos {
     width: 200px;
@@ -126,8 +152,10 @@ body {
     display: flex;
     justify-content: space-around;
     margin: 15px 0 0 0;
+    flex-wrap: wrap;
 }
 
+/* index */
 .section_tela_inicial {
     display: flex;
     flex-direction: column;
@@ -163,15 +191,10 @@ body {
 }
 
 
-/* .grid-container a{
-    text-decoration: none;
-    color: black;
-} */
-
 .grid-item {
     border: none;
     padding: 20px;
-    background-color: #ddd;
+    background-color: rgb(3, 143, 224);
     text-align: center;
     font-size: 24px;
     text-decoration: none;
@@ -193,27 +216,13 @@ body {
 }
 
 .img_usuarios img {
-    border: 1px solid black;
     border-radius: 5px;
-    padding: 5px;
     margin: 0 5px 0 5px;
+    width: 120px;
 }
 
 
-/* .opcoes{
-    display: flex;
-}
 
-.opcao_botao{
-    border: none;
-    padding:  0 10px 0 10px;
-    border-radius: 5px;
-    background-color: #ddd;
-    text-align: center;
-    font-size: 24px;
-    margin: 150px 5px 0 5px ;
-    text-decoration: none;
-}  */
 
 .opcoes a {
     text-decoration: none;

@@ -42,10 +42,10 @@ mysqli_close($banco);
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-sm navbar-dark bg-info fixed-top">
+    <nav class="navbar navbar-expand-sm  navbar-dark  fixed-top" style="background-color: rgb(1, 127, 201);">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="assets/img/Logo.png" alt="Avatar Logo" style="width:50px;" class="rounded-pill">
+                <img src="assets/img/logoEscola.png" alt="Avatar Logo" style="width:50px;" class="rounded-pill">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -65,7 +65,6 @@ mysqli_close($banco);
 
             <?php
             echo "<img src='$imagem_blob' alt='' width='140px'>";
-            // echo "<h1>Dados : </h1>" . $dados;
             ?>
         </div>
         <div class="abas">
@@ -85,7 +84,7 @@ mysqli_close($banco);
                     for ($i = 0; $i < $resultImgLoginsBd; $i++) {
                         $imgLoginUsuarios = mysqli_fetch_row($imgBdLoginUsuarios);
                         if ($dados != $imgLoginUsuarios[0]) {
-                            echo "<img src='$imgLoginUsuarios[1]' alt='' width='120px'>";
+                            echo "<img src='$imgLoginUsuarios[1]' alt='' >";
                         }
                     }
 
