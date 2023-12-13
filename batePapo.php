@@ -128,7 +128,7 @@ ob_start(); //Limpar o buffer de saida para evitar erro de redirecionamento
         // }
 
         // // Exemplo: Adiciona conteúdo após um intervalo de tempo
-        // setInterval(addContent, 0.500);  // Adiciona conteúdo a cada 2 segundos (exemplo)
+        // setInterval(addContent, 0.5);  // Adiciona conteúdo a cada 2 segundos (exemplo)
     </script>
 </body>
 

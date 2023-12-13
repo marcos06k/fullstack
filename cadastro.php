@@ -1,11 +1,4 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Inserir no BD</title>
-</head>
 
-<body>
     <?php
         //importação dos dados do BD mysql
         include("conexao.php");
@@ -28,6 +21,3 @@
         mysqli_close($banco);
 
     ?>
-</body>
-
-</html>

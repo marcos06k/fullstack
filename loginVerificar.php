@@ -1,5 +1,7 @@
 
     <?php
+    // Inicie a sessão para acessar a variável de sessão verificar login
+    session_start();
     include("conexao.php");
 
     // recebendo do html (front)
@@ -19,7 +21,7 @@
         echo "<META http-equiv='refresh' content='0,URL=login.html'>";
     }
 
-    session_start();
+    
 
     $dados = $registro_email[0];
 

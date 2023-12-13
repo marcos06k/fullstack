@@ -1,9 +1,10 @@
 <?php
+// Inicie a sessão para acessar a variável de sessão verificar login
+session_start();
 include("conexao.php");
 
 // Ver o login da pessoa
-// Inicie a sessão para acessar a variável de sessão verificar login
-session_start();
+
 //recebendo email
 $dados = $_SESSION['meusDados'];
 

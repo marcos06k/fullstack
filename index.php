@@ -1,9 +1,10 @@
 <?php
+// Inicie a sessão para acessar a variável de sessão verificar login
+session_start();
 include("conexao.php");
 
 // Ver o login da pessoa
-// Inicie a sessão para acessar a variável de sessão verificar login
-session_start();
+
 //recebendo email
 $dados = $_SESSION['meusDados'];
 
@@ -73,7 +74,6 @@ mysqli_close($banco);
         </div>
         <div class="abas">
             <div class="grid-container">
-                <a class="grid-item" href="">Temas de Estudo</a>
                 <a class="grid-item" href="batePapo.php">Bate Papo</a>
                 <a class="grid-item" href="materias.php">Materiais</a>
                 <a class="grid-item" href="usuarios.php">Usuários</a>
@@ -85,12 +85,12 @@ mysqli_close($banco);
             <h3>Usuários</h3>
             <div class="img_usuarios">
                 <?php
-                    for ($i = 0; $i < $resultImgLoginsBd; $i++) {
-                        $imgLoginUsuarios = mysqli_fetch_row($imgBdLoginUsuarios);
-                        if ($dados != $imgLoginUsuarios[0]) {
-                            echo "<img src='$imgLoginUsuarios[1]' alt='' >";
-                        }
+                for ($i = 0; $i < $resultImgLoginsBd; $i++) {
+                    $imgLoginUsuarios = mysqli_fetch_row($imgBdLoginUsuarios);
+                    if ($dados != $imgLoginUsuarios[0]) {
+                        echo "<img src='$imgLoginUsuarios[1]' alt='' >";
                     }
+                }
 
 
                 ?>
@@ -102,6 +102,7 @@ mysqli_close($banco);
                 <a class="grid-item" href="editarPerfil.html">Editar Perfil</a>
                 <a class="grid-item" href="gerenciarConteudos.php">Gerenciar meus conteudos</a>
                 <a class="grid-item" href="login.html">Sair</a>
+
             </div>
         </div>
 

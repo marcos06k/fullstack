@@ -1,7 +1,8 @@
 <?php
+session_start();
 include("conexao.php");
 
-$queryArquivo = mysqli_query($banco, "select titulo, arquivo from materia;");
+$queryArquivo = mysqli_query($banco, "select titulo, arquivo, data_materia, id_cadastro_professor from materia;");
 $arquivoBd = mysqli_num_rows($queryArquivo);
 ?>
 
@@ -45,7 +46,14 @@ $arquivoBd = mysqli_num_rows($queryArquivo);
             <?php
             for ($i = 0; $i < $arquivoBd; $i++) {
                 $arquivoBanco = mysqli_fetch_row($queryArquivo);
-                echo "<div class='grid-item_materias materias'> <a href='$arquivoBanco[1]'>$arquivoBanco[0]</a> </div>";
+
+                $queryProfessor = mysqli_query($banco, "select nome, sobrenome from cadastro_professor where $arquivoBanco[3];");
+                $dadosProfessor = mysqli_fetch_row($queryProfessor);
+
+                // converter uma data vinda do MYSQL para o formato PT-BR
+                $data = implode("/",array_reverse(explode("-",$arquivoBanco[2])));
+
+                echo "<div class='grid-item_materias materias'> Prof: $dadosProfessor[0] $dadosProfessor[1] <br> Conteudo:   <a href='$arquivoBanco[1]'> $arquivoBanco[0] </a> <br> $data </div>";
             }
             ?>
 

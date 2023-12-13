@@ -1,8 +1,10 @@
 <?php
+// Inicie a sessão para acessar a variável de sessão verificar login
+    session_start();
     include("conexao.php");
     
     //buscando por meio de uma seção o email do usuario logado
-    session_start();
+    
     $email_login = $_SESSION['meusDados'];
     
     //verifica se a vinda do metodo for post 
@@ -43,12 +45,11 @@
         $dadosUsuarioProfessor_login = mysqli_fetch_row($query_dadosUsuarioProfessor_login);
     
         //query para pegar os dados da classe materia
-        $queryArquivoProfessor = mysqli_query($banco, "select titulo, arquivo from materia where id_cadastro_professor='$dadosUsuarioProfessor_login[0]';");
+        $queryArquivoProfessor = mysqli_query($banco, "select titulo, arquivo, data_materia, id_cadastro_professor from materia where id_cadastro_professor='$dadosUsuarioProfessor_login[0]';");
         //pegando o numero total de linhas que a query conseguiu pegar
         $arquivoProfessorBd = mysqli_num_rows($queryArquivoProfessor);
 
-    mysqli_close($banco);
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -101,8 +102,15 @@
             for ($i = 0; $i < $arquivoProfessorBd; $i++) {
                 //pega os dados contido em cada linha
                 $arquivoProfessorBanco = mysqli_fetch_row($queryArquivoProfessor);
+
+                $query_dadosProfessorBanco = mysqli_query($banco, "select nome, sobrenome from cadastro_professor where $arquivoProfessorBanco[3];");
+                $dadosProfessorBanco = mysqli_fetch_row($query_dadosProfessorBanco);
+
+                // converter uma data vinda do MYSQL para o formato PT-BR
+                $data = implode("/",array_reverse(explode("-",$arquivoProfessorBanco[2])));
+
                 //adiciona as materias na tela
-                echo "<div class='grid-item_materias materias'> <a href='$arquivoProfessorBanco[1]'>$arquivoProfessorBanco[0]</a> </div>";
+                echo "<div class='grid-item_materias materias'> Prof: $dadosProfessorBanco[0] $dadosProfessorBanco[1] <br> Conteudo:   <a href='$arquivoProfessorBanco[1]'> $arquivoProfessorBanco[0] </a> <br> $data </div>";
             }
             ?>
 
