@@ -9,6 +9,10 @@ $dados = $_SESSION['meusDados'];
 
 $imgUsuarioLogin = mysqli_query($banco, "select nome, img_perfil from cadastro_professor where email='$dados';");
 $resultImgLogin = mysqli_fetch_row($imgUsuarioLogin);
+
+$nome_usuario = $resultImgLogin[0];
+$_SESSION['nome_usuario'] = $nome_usuario;
+
 if ($resultImgLogin) {
     $imagem_blob = $resultImgLogin[1];
 } else {
@@ -70,7 +74,7 @@ mysqli_close($banco);
         <div class="abas">
             <div class="grid-container">
                 <a class="grid-item" href="">Temas de Estudo</a>
-                <a class="grid-item" href="">Bate Papo</a>
+                <a class="grid-item" href="batePapo.php">Bate Papo</a>
                 <a class="grid-item" href="materias.php">Materiais</a>
                 <a class="grid-item" href="usuarios.php">Usuários</a>
 
