@@ -27,6 +27,7 @@ body {
     color: white;
     text-decoration: none;
 }
+
 .botao:hover {
     background-color: rgb(34, 34, 34);
 }
@@ -61,13 +62,14 @@ body {
     justify-content: center;
 }
 
-.formulario_login .recuperar_login{
-    color: black; 
+.formulario_login .recuperar_login {
+    color: black;
     text-decoration: none;
 
 }
-.formulario_login .recuperar_login:hover{
-    color: black; 
+
+.formulario_login .recuperar_login:hover {
+    color: black;
     text-decoration: underline;
 
 }
@@ -89,9 +91,10 @@ body {
     align-items: center;
     width: 220px;
     margin: 0 0 15px 0;
-    
+
 }
-.div_conteudo_boasvinda .botao{
+
+.div_conteudo_boasvinda .botao {
     margin: 0 0 7px 0;
 }
 
@@ -124,7 +127,8 @@ body {
     width: 80%;
     margin: 5% 0 5% 0;
 }
-.input_form_cadastro{
+
+.input_form_cadastro {
     border-radius: 50px;
     border: 1px solid black;
 }
@@ -279,4 +283,87 @@ body {
 .card_usuarios-usuarios img {
     height: 280px;
     width: 100%;
+}
+
+/* bate papo começa aqui */
+
+.section_batepapo-batepapo {
+    margin: 175px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.div_batepapo_left {
+    width: 35%;
+    background-color: rgb(3, 143, 224);
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div_batepapo_left img{
+    width: 400px;
+    height: 360px;
+}
+
+.div_batepapo_right {
+    width: 45%;
+    padding: 0 0 0 15px;
+    height: 600px;
+}
+
+.div_batepapo_right #mensagem {
+    width: 200px;
+}
+
+.div_batepapo_right #botao_enviar {
+    width: 100px;
+}
+
+.campo_mensagens-batepapo {
+    width: 100%;
+    height: 85%;
+    overflow-y: scroll;
+}
+.digitar_enviar_mensagem-batepapo{
+    margin: 10px 0 0 0;
+}
+
+@media screen and (max-width: 1400px) {
+    .section_batepapo-batepapo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .div_batepapo_left {
+        width: 50%;
+        height: 400px;
+    }
+
+    .div_batepapo_right {
+        width: 50%;
+        padding: 0 0 0 0px;
+
+    }
+}
+@media screen and (max-width: 1000px) {
+    .section_batepapo-batepapo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .div_batepapo_left {
+        width: 307px;
+        height: 400px;
+    }
+
+    .div_batepapo_right {
+        width: 307px;
+        padding: 0 0 0 0px;
+
+    }
 }

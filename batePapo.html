@@ -37,17 +37,36 @@ ob_start(); //Limpar o buffer de saida para evitar erro de redirecionamento
             </div>
         </div>
     </nav>
-    <h2>Chat</h2>
-    <!-- Bem vindo com o nome do usuário vindo da pag. index.php -->
-    <p>Bem-vindo: <span id="nome-usuario"> <?php echo $_SESSION['nome_usuario']; ?> </span> </p>
 
-    <!-- Campo e botão para o usuário enviar mensagem -->
-    <label for="">Nova mensagem:</label>
-    <input type="text" name="mensagem" id="mensagem" placeholder="Digite a mensagem..."> <br><br>
-    <input type="button" onclick="enviar()" value="enviar"> <br> <br>
+    <section class="section_batepapo-batepapo">
 
-    <!-- Campo onde será exibido a mensagem com o nome do usuário  -->
-    <span id="mensagem-chat"> </span>
+        <div class="div_batepapo_left">
+            <img src="assets/img/logoEscola.png" alt="" >
+        </div>
+
+        <div class="div_batepapo_right">
+            <!-- Bem vindo com o nome do usuário vindo da pag. index.php -->
+            <p>Bem-vindo: <span id="nome-usuario">
+                    <?php echo $_SESSION['nome_usuario']; ?>
+                </span> </p>
+
+
+            <!-- Campo onde será exibido a mensagem com o nome do usuário  -->
+            <div class="campo_mensagens-batepapo" id="campo_mensagens-batepapo">
+                <span id="mensagem-chat"> </span>
+            </div>
+
+            <div class="digitar_enviar_mensagem-batepapo">
+                <!-- Campo e botão para o usuário enviar mensagem -->
+            <input type="text" name="mensagem" id="mensagem" placeholder="Digite a mensagem..."> 
+            <input type="button" onclick="enviar()" value="enviar" id="botao_enviar"> 
+            </div>
+        </div>
+
+
+
+
+    </section>
 
     <script>
         // resgatando o campo html que será impresso as mensagens 
@@ -84,10 +103,30 @@ ob_start(); //Limpar o buffer de saida para evitar erro de redirecionamento
 
             // enviar a mensagem para o HTML, inserindo no final da lista de mensagens
             mensagemChat.insertAdjacentHTML('beforeend', `${nomeUsuario}: ${mensagem.value}<br>`)
-            
+
             // limpar o campo de mensagem
             mensagem.value = ''
         }
+
+
+        // scroll do overflow no chat ficar sempre na parte inferior conforme aumenta a quantidade de mensagem
+        
+        var container = document.getElementById('campo_mensagens-batepapo');
+
+        // Função para rolar para a parte inferior
+        function scrollToBottom() {
+            container.scrollTop = container.scrollHeight;
+        }
+
+        // Exemplo de adição de conteúdo (você pode chamar scrollToBottom() sempre que o conteúdo for adicionado)
+        function addContent() {
+
+            // Rola para a parte inferior após adicionar conteúdo
+            scrollToBottom();
+        }
+
+        // Exemplo: Adiciona conteúdo após um intervalo de tempo
+        setInterval(addContent, 0.500);  // Adiciona conteúdo a cada 2 segundos (exemplo)
     </script>
 </body>
 
