@@ -40,12 +40,12 @@
         }
     
         //query para pegar o id do usuario no banco de dados conforme seu email
-        $query_dadosUsuarioProfessor_login = mysqli_query($banco, "select id_cadastro_professor from cadastro_professor where email='$email_login';");
+        $query_dadosUsuarioProfessor = mysqli_query($banco, "select id_cadastro_professor from cadastro_professor where email='$email_login';");
         //pegando o dado que a query achou
-        $dadosUsuarioProfessor_login = mysqli_fetch_row($query_dadosUsuarioProfessor_login);
+        $dadosUsuarioProfessor = mysqli_fetch_row($query_dadosUsuarioProfessor);
     
         //query para pegar os dados da classe materia
-        $queryArquivoProfessor = mysqli_query($banco, "select titulo, arquivo, data_materia, id_cadastro_professor from materia where id_cadastro_professor='$dadosUsuarioProfessor_login[0]';");
+        $queryArquivoProfessor = mysqli_query($banco, "select titulo, arquivo, data_materia, id_cadastro_professor from materia where id_cadastro_professor='$dadosUsuarioProfessor[0]';");
         //pegando o numero total de linhas que a query conseguiu pegar
         $arquivoProfessorBd = mysqli_num_rows($queryArquivoProfessor);
 
@@ -103,7 +103,7 @@
                 //pega os dados contido em cada linha
                 $arquivoProfessorBanco = mysqli_fetch_row($queryArquivoProfessor);
 
-                $query_dadosProfessorBanco = mysqli_query($banco, "select nome, sobrenome from cadastro_professor where $arquivoProfessorBanco[3];");
+                $query_dadosProfessorBanco = mysqli_query($banco, "select nome, sobrenome from cadastro_professor where id_cadastro_professor='$arquivoProfessorBanco[3]';");
                 $dadosProfessorBanco = mysqli_fetch_row($query_dadosProfessorBanco);
 
                 // converter uma data vinda do MYSQL para o formato PT-BR

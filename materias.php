@@ -47,7 +47,7 @@ $arquivoBd = mysqli_num_rows($queryArquivo);
             for ($i = 0; $i < $arquivoBd; $i++) {
                 $arquivoBanco = mysqli_fetch_row($queryArquivo);
 
-                $queryProfessor = mysqli_query($banco, "select nome, sobrenome from cadastro_professor where $arquivoBanco[3];");
+                $queryProfessor = mysqli_query($banco, "select nome, sobrenome from cadastro_professor where id_cadastro_professor='$arquivoBanco[3]';");
                 $dadosProfessor = mysqli_fetch_row($queryProfessor);
 
                 // converter uma data vinda do MYSQL para o formato PT-BR
